@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d8132e49a7b1f4ba04970bc14c5d23, type: 3}
+  m_Name: DragonDance
+  m_EditorClassIdentifier: 
+  id: 6
+  attack_name: Dragon Dance
+  mana_cost: 30
+  accuracy: 100
+  animation: {fileID: 0}
+  is_damage: 0
+  power: 0
+  dmg_accuracy: 0
+  is_status: 0
+  status: {fileID: 0}
+  status_accuracy: 0
+  is_stats: 1
+  is_self: 1
+  stats_change:
+  - stat_name: atk
+    level_change: 30
+  stats_accuracy: 0
+  is_health: 0
+  health_change: 0
+  health_accuracy: 0
