@@ -10,8 +10,8 @@ public class DataSource : MonoBehaviour
     public int player_level;
     public int enemy_level;
 
-    public PokemonAttack[] player_attacks;
-    public PokemonAttack[] enemy_attacks;
+    public Attack[] player_attacks;
+    public Attack[] enemy_attacks;
 
     PokemonInstance player;
     PokemonInstance enemy;

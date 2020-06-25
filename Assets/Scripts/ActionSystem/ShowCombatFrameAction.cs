@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class ShowCombatFrameAction : AbstractAction
 {
     public override void Execute()
     {
         string[] attacksNames = new string[4];
-        PokemonAttack[] pokemonAttacks = Manager.instance.pokemon_player.getAttacks();
+        Attack[] pokemonAttacks = Manager.instance.pokemon_player.getAttacks();
         int i = 0;
-        foreach(PokemonAttack a in pokemonAttacks)
+        foreach(Attack a in pokemonAttacks)
         {
-            attacksNames[i] = a.attack_name;
+            attacksNames[i] = a.Name;
             i++;
         }
 
@@ -25,7 +22,7 @@ public class ShowCombatFrameAction : AbstractAction
                 () => executeAttack(pokemonAttacks[3])});
     }
 
-    void executeAttack(PokemonAttack a)
+    void executeAttack(Attack a)
     {
         Manager.instance.enqueueAction(new ExecuteAttackAction(a, true));
         SetDone();

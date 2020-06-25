@@ -19,7 +19,7 @@ public class SFXManager : MonoBehaviour
     }
     public void doDamageAnimation(SpriteRenderer r, float time, Action callback)
     {
-        StartCoroutine(doAnimationBlink(r, time, callback));
+        StartCoroutine(doAnimation(new Color(0, 0, 0, 0), r, time, callback));
     }
 
     static IEnumerator doAnimation(Color change, SpriteRenderer r, float time, Action callback)
@@ -28,20 +28,9 @@ public class SFXManager : MonoBehaviour
         r.color = change;
         yield return new WaitForSeconds(time);
         r.color = c;
+        yield return new WaitForSeconds(time);
+
         if (callback!=null)
             callback.Invoke();
-        yield return null;
-    }
-
-    static IEnumerator doAnimationBlink(SpriteRenderer r, float time, Action callback)
-    {
-        Color c = r.color;
-        Color transparent = new Color(0, 0, 0, 0);
-
-        r.color = transparent;
-        yield return new WaitForSeconds(time);
-        r.color = c;
-        if (callback != null) callback.Invoke();
-        yield return null;
     }
 }

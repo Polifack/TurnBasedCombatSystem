@@ -34,7 +34,6 @@ public class UI_TextFrame : MonoBehaviour
         StartCoroutine(Run());
     }
 
-
     //Change size
     public void setWidthSize(float x)
     {

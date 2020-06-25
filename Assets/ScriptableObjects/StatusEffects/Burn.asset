@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   duration_turns: 3
-  effect_name: Burn
+  effect_name: BRN

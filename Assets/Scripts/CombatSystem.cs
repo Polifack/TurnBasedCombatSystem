@@ -6,12 +6,10 @@ using UnityEngine;
 
 public class CombatSystem : MonoBehaviour
 {
-    public static float computeDamage(PokemonInstance attacker, PokemonInstance deffender, PokemonAttack attack)
+    public static float computeDamage(PokemonInstance attacker, PokemonInstance deffender, float attackPower)
     {
         float attackerDamage = attacker.getAttack();
         float deffenderDeffense = deffender.getDeffense();
-
-        float attackPower = attack.power;
 
         float attackerLevel = attacker.getLevel();
 

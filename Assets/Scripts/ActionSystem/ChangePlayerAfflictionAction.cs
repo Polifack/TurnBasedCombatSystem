@@ -10,6 +10,7 @@
     public override void Execute()
     {
         Manager.instance.enqueueAction(new DisplayTextAction("Player is now afflicted with " + affliction.effect_name));
+        Manager.instance.enqueueAction(new ChangePlayerStatusEffectAction(affliction));
         SetDone();
     }
 }

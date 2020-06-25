@@ -7,11 +7,11 @@ public class EnemyTurnAction : AbstractAction
     public override void Execute()
     {
         Debug.Log("Executing enemy turn");
-        PokemonAttack[] attacks = Manager.instance.pokemon_enemy.getAttacks();
+        Attack[] attacks = Manager.instance.pokemon_enemy.getAttacks();
         executeAttack(attacks[Random.Range(0, attacks.Length)]);
     }
 
-    void executeAttack(PokemonAttack a)
+    void executeAttack(Attack a)
     {
         Manager.instance.enqueueAction(new ExecuteAttackAction(a, false));
         SetDone();

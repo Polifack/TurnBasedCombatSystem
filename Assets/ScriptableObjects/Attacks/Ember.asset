@@ -9,25 +9,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d8132e49a7b1f4ba04970bc14c5d23, type: 3}
+  m_Script: {fileID: 11500000, guid: 39bf9d09bee4cfe48a711e1556cc5296, type: 3}
   m_Name: Ember
   m_EditorClassIdentifier: 
-  id: 1
-  attack_name: Ember
-  mana_cost: 5
-  accuracy: 90
-  animation: {fileID: 3406974520035426906, guid: df772e9ffc6633546bd301a553546915,
+  Name: Ember
+  Animation: {fileID: 3406974520035426906, guid: df772e9ffc6633546bd301a553546915,
     type: 3}
-  is_damage: 1
-  power: 50
-  dmg_accuracy: 90
-  is_status: 0
-  status: {fileID: 11400000, guid: aa4ca95ce9a426b4c97308d2e9e47d9a, type: 2}
-  status_accuracy: 20
-  is_stats: 0
-  is_self: 0
-  stats_change: []
-  stats_accuracy: 0
-  is_health: 0
-  health_change: 0
-  health_accuracy: 0
+  Accuracy: 90
+  ManaCost: 20
+  actions:
+  - actionType: 0
+    actionAccuracy: 90
+    actionPower: 35
+    isMainAction: 1
+    isSelf: 0
+    statusEffect: {fileID: 0}
+    statChange:
+      statName: 
+      levelChange: 0
+  - actionType: 2
+    actionAccuracy: 20
+    actionPower: 0
+    isMainAction: 0
+    isSelf: 0
+    statusEffect: {fileID: 11400000, guid: aa4ca95ce9a426b4c97308d2e9e47d9a, type: 2}
+    statChange:
+      statName: 
+      levelChange: 0

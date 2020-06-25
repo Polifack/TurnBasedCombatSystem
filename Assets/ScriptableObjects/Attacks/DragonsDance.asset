@@ -10,19 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39bf9d09bee4cfe48a711e1556cc5296, type: 3}
-  m_Name: Roost
+  m_Name: DragonsDance
   m_EditorClassIdentifier: 
-  Name: Roost
+  Name: Dragon's Dance
   Animation: {fileID: 0}
   Accuracy: 100
-  ManaCost: 25
+  ManaCost: 10
   actions:
-  - actionType: 3
-    actionAccuracy: 0
-    actionPower: 60
-    isMainAction: 1
+  - actionType: 1
+    actionAccuracy: 100
+    actionPower: 0
+    isMainAction: 0
     isSelf: 1
     statusEffect: {fileID: 0}
     statChange:
-      statName: 
-      levelChange: 0
+      statName: speed
+      levelChange: 4
+  - actionType: 1
+    actionAccuracy: 100
+    actionPower: 0
+    isMainAction: 0
+    isSelf: 1
+    statusEffect: {fileID: 0}
+    statChange:
+      statName: atk
+      levelChange: 4

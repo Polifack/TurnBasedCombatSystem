@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39bf9d09bee4cfe48a711e1556cc5296, type: 3}
-  m_Name: Roost
+  m_Name: ThunderWave
   m_EditorClassIdentifier: 
-  Name: Roost
+  Name: Thunder Wave
   Animation: {fileID: 0}
   Accuracy: 100
-  ManaCost: 25
+  ManaCost: 10
   actions:
-  - actionType: 3
-    actionAccuracy: 0
-    actionPower: 60
+  - actionType: 2
+    actionAccuracy: 100
+    actionPower: 0
     isMainAction: 1
-    isSelf: 1
-    statusEffect: {fileID: 0}
+    isSelf: 0
+    statusEffect: {fileID: 11400000, guid: 75894f1c33c59974f8746081ad1f9d4e, type: 2}
     statChange:
       statName: 
       levelChange: 0

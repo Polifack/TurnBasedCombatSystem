@@ -12,6 +12,7 @@ public class ChangePlayerStatsAction : AbstractAction
     }
     public override void Execute()
     {
+        Manager.instance.enqueueAction(new DisplayTextAction("Changing stat " +stat  + " by " +ammount));
         Manager.instance.pokemon_player.changeStat(stat, ammount);
         if (ammount > 0)
             Manager.instance.SFXmanager.doStatsPositiveAnimation(Manager.instance.player.GetComponent<SpriteRenderer>(), 0.5f, SetDone);

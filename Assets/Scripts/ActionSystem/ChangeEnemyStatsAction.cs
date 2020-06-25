@@ -12,6 +12,7 @@ public class ChangeEnemyStatsAction : AbstractAction
     }
     public override void Execute()
     {
+        Manager.instance.enqueueAction(new DisplayTextAction("Changing enemy stat " + stat + " by " + ammount));
         Manager.instance.pokemon_enemy.changeStat(stat, ammount);
         if (ammount>0)
             Manager.instance.SFXmanager.doStatsPositiveAnimation(Manager.instance.enemy.GetComponent<SpriteRenderer>(), 0.5f, SetDone);

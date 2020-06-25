@@ -20,8 +20,8 @@ public class PokemonInstance
 
     StatusEffect affliction = null;
 
-    PokemonAttack[] attacks = new PokemonAttack[4];
-    public PokemonInstance(PokemonBase _source, int _level, int _id, PokemonAttack[] _attacks)
+    Attack[] attacks = new Attack[4];
+    public PokemonInstance(PokemonBase _source, int _level, int _id, Attack[] _attacks)
     {
         id = _id;
         level = _level;
@@ -38,7 +38,7 @@ public class PokemonInstance
 
         attacks = _attacks;
     }
-    public PokemonInstance(PokemonBase _source, int _level, PokemonAttack[] _attacks)
+    public PokemonInstance(PokemonBase _source, int _level, Attack[] _attacks)
     {
         id = UnityEngine.Random.Range(0, 999);
         level = _level;
@@ -68,7 +68,7 @@ public class PokemonInstance
     {
         return current_mana / base_mana;
     }
-    public PokemonAttack[] getAttacks()
+    public Attack[] getAttacks()
     {
         return attacks;
     }

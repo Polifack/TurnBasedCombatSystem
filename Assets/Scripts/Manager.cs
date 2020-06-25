@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Manager : MonoBehaviour
@@ -54,12 +55,11 @@ public class Manager : MonoBehaviour
         ds = GetComponent<DataSource>();
         getPokemonData();
         
-        new SetEnemySpriteAction().Execute();
-        new SetPlayerSpriteAction().Execute();
+        new SetEnemyData().Execute();
+        new SetPlayerData().Execute();
 
         actionQ.Enqueue(new HideButtonsFrameAction());
         actionQ.Enqueue(new DisplayTextAction("Welcome to the pokemon battle simulator"));
-        actionQ.Enqueue(new DisplayTextAction("Now i will display you the buttons"));
         actionQ.Enqueue(new ShowButtonsFrameAction());
 
         currentAction = actionQ.Dequeue();
@@ -68,7 +68,7 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        if (currentAction!=null && currentAction.IsDone())
+        if (currentAction!=null && currentAction.IsDone() && actionQ.Any())
         {
             currentAction = actionQ.Dequeue();
             currentAction.Execute();
