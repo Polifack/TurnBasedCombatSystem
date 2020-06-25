@@ -84,7 +84,7 @@ public class PokemonInstance
     }
     public bool changeMana(float ammount)
     {
-        if (current_mana-ammount <= 0) return true;
+        if (current_mana + ammount <= 0) return true;
         current_mana = current_mana + ammount;
         return false;
     }

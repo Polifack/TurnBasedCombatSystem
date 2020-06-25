@@ -16,7 +16,7 @@ MonoBehaviour:
   Animation: {fileID: 3406974520035426906, guid: df772e9ffc6633546bd301a553546915,
     type: 3}
   Accuracy: 90
-  ManaCost: 20
+  ManaCost: 25
   actions:
   - actionType: 0
     actionAccuracy: 90

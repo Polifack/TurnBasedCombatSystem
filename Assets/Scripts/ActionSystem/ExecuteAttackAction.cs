@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 public class ExecuteAttackAction : AbstractAction
 {
@@ -17,7 +18,15 @@ public class ExecuteAttackAction : AbstractAction
             //Setup mana, show text, disable buttons and play animation
 
             Manager.instance.enqueueAction(new HideButtonsFrameAction());
-            Manager.instance.enqueueAction(new ChangePlayerManaAction(-1 * attack.ManaCost));
+            
+            if (Manager.instance.pokemon_player.changeMana(-1 * attack.ManaCost))
+            {
+                outOfManaPlayer();
+                SetDone();
+                return;
+            }
+            Debug.Log(Manager.instance.pokemon_player.getManaPercentage());
+            Manager.instance.enqueueAction(new ChangePlayerManaAction());
             Manager.instance.enqueueAction(new AttackAnimationAction(attack.Animation,
                 Manager.instance.player.transform, Manager.instance.enemy.transform));
             
@@ -40,7 +49,13 @@ public class ExecuteAttackAction : AbstractAction
             //Initial Actions
             //Setup mana, show text, and play animation
 
-            Manager.instance.enqueueAction(new ChangeEnemyManaAction(-1 * attack.ManaCost));
+            if (Manager.instance.pokemon_enemy.changeMana(-1 * attack.ManaCost))
+            {
+                outOfManaEnemy();
+                SetDone();
+                return;
+            }
+            Manager.instance.enqueueAction(new ChangeEnemyManaAction());
             Manager.instance.enqueueAction(new AttackAnimationAction(attack.Animation, 
                 Manager.instance.enemy.transform, Manager.instance.player.transform));
             
@@ -57,6 +72,19 @@ public class ExecuteAttackAction : AbstractAction
                 lastDone);
             SetDone();
         }
+    }
+
+    void outOfManaPlayer()
+    {
+        Manager.instance.enqueueAction(new DisplayTextAction("You have no mana for this action!"));
+        Manager.instance.enqueueAction(new ShowButtonsFrameAction());
+        Manager.instance.enqueueAction(new ShowCombatFrameAction());
+        return;
+    }
+
+    void outOfManaEnemy()
+    {
+        Manager.instance.enqueueAction(new EnemyTurnAction());
     }
 }
 
